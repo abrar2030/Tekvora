@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrar Ahmed | Software Developer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Meta tags for better SEO and sharing -->
+    <meta name="description" content="Abrar Ahmed - Software Developer specializing in DevOps, Cloud Infrastructure & Full-Stack Development">
+    <meta name="keywords" content="software developer, DevOps, cloud infrastructure, full-stack, Java, Python, AWS, GCP, Docker, Kubernetes">
+    <meta name="author" content="Abrar Ahmed">
+    <meta property="og:title" content="Abrar Ahmed | Software Developer">
+    <meta property="og:description" content="Software Developer specializing in DevOps, Cloud Infrastructure & Full-Stack Development">
+    <meta property="og:type" content="website">
+</head>
+<body>
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="loader-text">Loading Experience</div>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="loader-info">Initializing 3D environment...</div>
+        </div>
+    </div>
+
+    <div id="webgl-container"></div>
+    <div class="noise-overlay"></div>
+    <div class="holographic-overlay"></div>
+    
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <div id="voice-indicator">
+        <div class="voice-icon">
+            <i class="fas fa-microphone"></i>
+        </div>
+        <div class="voice-text">Voice Command Active</div>
+    </div>
+    
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-text">AA</div>
+                <div class="logo-particles"></div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="nav-link" data-section="home">Home</a></li>
+                    <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+                    <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+                    <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+                    <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+                    <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+                    <li><a href="#ai-assistant" class="nav-link" data-section="ai-assistant">AI Assistant</a></li>
+                </ul>
+            </nav>
+            <div class="controls">
+                <div class="theme-toggle">
+                    <input type="checkbox" id="theme-switch">
+                    <label for="theme-switch" class="switch-label">
+                        <i class="fas fa-sun"></i>
+                        <i class="fas fa-moon"></i>
+                    </label>
+                </div>
+                <div class="voice-toggle">
+                    <button id="voice-control-btn" aria-label="Toggle voice control">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                </div>
+                <div class="ar-toggle">
+                    <button id="ar-view-btn" aria-label="Toggle AR view">
+                        <i class="fas fa-vr-cardboard"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-name-container">
+                        <h1 class="hero-name">Abrar Ahmed</h1>
+                        <div class="hero-name-particles"></div>
+                    </div>
+                    <h2 class="hero-title">Software Developer</h2>
+                    <div class="hero-subtitle">
+                        <span class="typing-text"></span>
+                        <span class="typing-cursor">|</span>
+                    </div>
+                    <div class="hero-cta">
+                        <button class="cta-button explore-btn">
+                            <span>Explore Portfolio</span>
+                            <div class="button-particles"></div>
+                        </button>
+                        <button class="cta-button contact-btn">
+                            <span>Contact Me</span>
+                            <div class="button-particles"></div>
+                        </button>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/abrar2030" target="_blank" class="social-icon" data-tooltip="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                            <div class="icon-particles"></div>
+                        </a>
+                        <a href="https://github.com/abrar2030" target="_blank" class="social-icon" data-tooltip="GitHub">
+                            <i class="fab fa-github"></i>
+                            <div class="icon-particles"></div>
+                        </a>
+                        <a href="https://facebook.com/abrar2O3O" target="_blank" class="social-icon" data-tooltip="Facebook">
+                            <i class="fab fa-facebook"></i>
+                            <div class="icon-particles"></div>
+                        </a>
+                        <a href="https://instagram.com/abrar2o3o" target="_blank" class="social-icon" data-tooltip="Instagram">
+                            <i class="fab fa-instagram"></i>
+                            <div class="icon-particles"></div>
+                        </a>
+                        <a href="mailto:abrarahmedpei@gmail.com" class="social-icon" data-tooltip="Email">
+                            <i class="fas fa-envelope"></i>
+                            <div class="icon-particles"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <div class="arrows">
+                        <span class="arrow"></span>
+                        <span class="arrow"></span>
+                        <span class="arrow"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-background">
+                <div class="grid"></div>
+                <div class="floating-elements">
+                    <div class="floating-element" data-depth="0.2"></div>
+                    <div class="floating-element" data-depth="0.4"></div>
+                    <div class="floating-element" data-depth="0.6"></div>
+                    <div class="floating-element" data-depth="0.8"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title" data-text="About Me">About Me</h2>
+                <div class="about-content">
+                    <div class="about-3d-model">
+                        <div id="avatar-container"></div>
+                        <div class="model-controls">
+                            <button class="model-control" id="rotate-model">
+                                <i class="fas fa-sync-alt"></i>
+                                <span>Rotate</span>
+                            </button>
+                            <button class="model-control" id="zoom-model">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Zoom</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="about-info">
+                        <div class="about-text">
+                            <p>I'm a Software Developer with expertise in DevOps, Cloud Infrastructure, and Full-Stack Development. With experience at Ericsson and a background in Computer Science from Eötvös Loránd University, I specialize in building scalable, efficient systems and applications.</p>
+                            <p>My focus is on creating innovative solutions using cutting-edge technologies, with a particular interest in cloud architecture, containerization, and automation.</p>
+                        </div>
+                        <div class="about-stats">
+                            <div class="stat-item" data-value="2">
+                                <div class="stat-value">0</div>
+                                <div class="stat-label">Years Experience</div>
+                                <div class="stat-particles"></div>
+                            </div>
+                            <div class="stat-item" data-value="6">
+                                <div class="stat-value">0</div>
+                                <div class="stat-label">Major Projects</div>
+                                <div class="stat-particles"></div>
+                            </div>
+                            <div class="stat-item" data-value="6">
+                                <div class="stat-value">0</div>
+                                <div class="stat-label">Certifications</div>
+                                <div class="stat-particles"></div>
+                            </div>
+                        </div>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Budapest, Hungary</span>
+                                <div class="contact-hover">
+                                    <div id="location-map"></div>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+36 20 267 3343</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>abrarahmedpei@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-transition"></div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2 class="section-title" data-text="Technical Skills">Technical Skills</h2>
+                <div class="skills-visualization">
+                    <div class="visualization-container">
+                        <div id="skills-globe"></div>
+                        <div class="skills-legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #00f6ff;"></div>
+                                <div class="legend-text">Programming Languages</div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #ff36ab;"></div>
+                                <div class="legend-text">DevOps & Cloud</div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #4d5eff;"></div>
+                                <div class="legend-text">Frameworks & Tools</div>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #b967ff;"></div>
+                                <div class="legend-text">Databases</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skills-details">
+                        <div class="skills-tabs">
+                            <button class="skill-tab active" data-category="programming">Programming</button>
+                            <button class="skill-tab" data-category="devops">DevOps & Cloud</button>
+                            <button class="skill-tab" data-category="frameworks">Frameworks</button>
+                            <button class="skill-tab" data-category="databases">Databases</button>
+                        </div>
+                        <div class="skills-content">
+                            <div class="skills-category active" data-category="programming">
+                                <div class="skill-item" data-skill="Java" data-level="90">
+                                    <div class="skill-header">
+                                        <div class="skill-icon"><i class="fab fa-java"></i></div>
+                                        <div class="skill-info">
+                                            <div class="skill-name">Java</div>
+                                            <div class="skill-level">Expert</div>
+                                        </div>
+                                    </div>
+                                    <div class="skill-bar">
+                                        <div class="skill-progress"></div>
+                                    </div>
+                                    <div class="skill-details">
+                                        <p>Advanced Java development including Spring Boot microservices, concurrent programming, and enterprise applications.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- JavaScript Files -->
+    <script src="js/interactive-features.js"></script>
+    <script src="js/voice-commands.js"></script>
+    <script src="js/ai-assistant.js"></script>
+    <script src="js/augmented-reality.js"></script>
+    <script src="js/3d-models.js"></script>
+    <script src="js/shaders.js"></script>
+</body>
+</html>
