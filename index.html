@@ -16,6 +16,349 @@
     <meta property="og:title" content="Abrar Ahmed | Cloud & DevOps Engineer">
     <meta property="og:description" content="Cloud & DevOps Engineer specializing in scalable cloud infrastructure, CI/CD automation, and efficient deployment workflows">
     <meta property="og:type" content="website">
+    <style>
+        /* Additional styles for improved visual appeal */
+        .skills-section {
+            background: linear-gradient(135deg, rgba(10, 10, 40, 0.9), rgba(20, 20, 60, 0.9));
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin: 30px 0;
+            overflow: hidden;
+        }
+        
+        .skills-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        
+        .skill-tab {
+            padding: 12px 20px;
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--text-color);
+            border: 1px solid var(--accent-color);
+            transition: all 0.3s ease;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skill-tab:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+        
+        .skill-tab:hover:before,
+        .skill-tab.active:before {
+            opacity: 0.8;
+        }
+        
+        .skill-tab.active {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .skill-item {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-color);
+        }
+        
+        .skill-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            border-radius: 50%;
+            margin-right: 15px;
+            font-size: 24px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .skill-progress {
+            height: 100%;
+            border-radius: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            position: relative;
+            transition: width 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .skill-progress:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* Projects section improvements */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .project-card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-color);
+        }
+        
+        .project-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+        
+        .project-header {
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .project-title {
+            font-size: 1.4rem;
+            margin: 0;
+            background: linear-gradient(90deg, var(--text-color), var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .project-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--text-color);
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .project-link:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .project-body {
+            padding: 20px;
+        }
+        
+        .project-description {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tech-tag {
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--text-color);
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tech-tag:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Certifications section improvements */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .certification-card {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-color);
+        }
+        
+        .certification-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, var(--primary-color-transparent), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 0;
+        }
+        
+        .certification-card:hover:before {
+            opacity: 0.1;
+        }
+        
+        .certification-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .certification-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+        }
+        
+        .certification-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            font-weight: 700;
+        }
+        
+        .certification-details {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin-bottom: 20px;
+            color: var(--text-color-secondary);
+        }
+        
+        .certification-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            color: var(--text-color);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .certification-link:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Fix for AI Assistant in navigation */
+        nav ul li a {
+            white-space: nowrap;
+        }
+    </style>
 </head>
 <body>
     <div id="loading-screen">
@@ -180,40 +523,6 @@
                             <p>I have deployed AWS workloads using EKS, automated infrastructure with Terraform, and integrated storage and security measures, creating scalable, cost-effective multi-cloud architectures.</p>
                             <p>I enjoy collaborating with teams to adopt cloud-native technologies, refine CI/CD workflows, and implement Kubernetes best practices that boost software delivery and operational efficiency.</p>
                             <p>Holding a Computer Science degree from Eötvös Loránd University and solid real-world cloud automation experience, I am eager to take on a Junior to Medior Cloud/DevOps Engineer role that drives innovation and builds resilient infrastructures.</p>
-                        </div>
-                        <div class="about-stats">
-                            <div class="stat-item" data-value="1">
-                                <div class="stat-value">0</div>
-                                <div class="stat-label">Years Experience</div>
-                                <div class="stat-particles"></div>
-                            </div>
-                            <div class="stat-item" data-value="6">
-                                <div class="stat-value">0</div>
-                                <div class="stat-label">Major Projects</div>
-                                <div class="stat-particles"></div>
-                            </div>
-                            <div class="stat-item" data-value="6">
-                                <div class="stat-value">0</div>
-                                <div class="stat-label">Certifications</div>
-                                <div class="stat-particles"></div>
-                            </div>
-                        </div>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span>Budapest, Hungary</span>
-                                <div class="contact-hover">
-                                    <div id="location-map"></div>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <span>+36 20 267 3343</span>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <span>abrarahmedpei@gmail.com</span>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -1128,5 +1437,39 @@
     <script src="js/augmented-reality.js"></script>
     <script src="js/3d-models.js"></script>
     <script src="js/shaders.js"></script>
+    
+    <script>
+    // Fix for theme toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeSwitch = document.getElementById('theme-switch');
+        const body = document.body;
+        
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            body.classList.add('light-theme');
+            themeSwitch.checked = true;
+        }
+        
+        // Theme toggle functionality
+        themeSwitch.addEventListener('change', function() {
+            if (this.checked) {
+                body.classList.add('light-theme');
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.classList.remove('light-theme');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+        
+        // Initialize skill progress bars
+        const skillItems = document.querySelectorAll('.skill-item');
+        skillItems.forEach(item => {
+            const level = item.getAttribute('data-level');
+            const progressBar = item.querySelector('.skill-progress');
+            progressBar.style.width = `${level}%`;
+        });
+    });
+    </script>
 </body>
 </html>
