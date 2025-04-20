@@ -400,7 +400,31 @@ function initAIAssistant() {
 
 // Theme Toggle
 function initThemeToggle() {
-  // Implementation remains the same
+  const themeSwitch = document.getElementById('theme-switch');
+  
+  if (!themeSwitch) return;
+  
+  // Check for saved theme preference in localStorage
+  const savedTheme = localStorage.getItem('theme');
+  
+  // Apply saved theme if it exists
+  if (savedTheme === 'light') {
+    document.body.classList.add('light-theme');
+    themeSwitch.checked = true;
+  }
+  
+  // Add event listener to theme switch
+  themeSwitch.addEventListener('change', function() {
+    if (this.checked) {
+      // Switch to light theme
+      document.body.classList.add('light-theme');
+      localStorage.setItem('theme', 'light');
+    } else {
+      // Switch to dark theme
+      document.body.classList.remove('light-theme');
+      localStorage.setItem('theme', 'dark');
+    }
+  });
 }
 
 // Scroll Animations
